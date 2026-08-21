@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>khanhOS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon">K</div>
+          <span>khanhOS</span>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button class="menu-item new-chat" id="newChatBtn">
+          <span>✏️</span>
+          <span>Chat mới</span>
+        </button>
+
+        <button class="menu-item">
+          <span>🖼️</span>
+          <span>Ảnh</span>
+        </button>
+
+        <button class="menu-item">
+          <span>📚</span>
+          <span>Thư viện</span>
+        </button>
+
+        <button class="menu-item">
+          <span>🔌</span>
+          <span>Plugin</span>
+        </button>
+
+        <button class="menu-item">
+          <span>📁</span>
+          <span>Dự án</span>
+        </button>
+      </nav>
+
+      <div class="recent-title">Gần đây</div>
+
+      <div class="chat-list" id="chatList">
+        <button class="chat-item active">
+          <span>💬</span>
+          <span>Cuộc chat mới</span>
+        </button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="profile">
+          <div class="avatar">K</div>
+          <div class="profile-text">
+            <strong>khanh</strong>
+            <span>khanhOS</span>
+          </div>
+          <button class="profile-more">•••</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+
+        <div class="top-title">
+          <span>KhanhOS AI</span>
+          <span class="online-dot"></span>
+        </div>
+
+        <button class="top-more">•••</button>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">K</div>
+
+          <h1>Xin chào 👋</h1>
+
+          <p>KhanhOS AI sẵn sàng hỗ trợ bạn.</p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-text="Giúp tôi viết code">
+              <span>💻</span>
+              <span>Viết code</span>
+            </button>
+
+            <button class="suggestion" data-text="Tìm cho tôi một game hay">
+              <span>🎮</span>
+              <span>Tìm game</span>
+            </button>
+
+            <button class="suggestion" data-text="Giúp tôi học bài">
+              <span>📚</span>
+              <span>Học tập</span>
+            </button>
+
+            <button class="suggestion" data-text="Giải thích cho tôi một vấn đề">
+              <span>💡</span>
+              <span>Giải thích</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages"></div>
+
+      </section>
+
+      <div class="composer-wrapper">
+        <div class="composer">
+
+          <button
+            class="composer-button"
+            id="fileButton"
+            title="Thêm file"
+            type="button"
+          >
+            +
+          </button>
+
+          <textarea
+            id="messageInput"
+            rows="1"
+            placeholder="Nhập bất cứ điều gì..."
+            autocomplete="off"
+          ></textarea>
+
+          <button
+            class="send-button"
+            id="sendButton"
+            type="button"
+            title="Gửi"
+            disabled
+          >
+            ↑
+          </button>
+        </div>
+
+        <div class="composer-note">
+          KhanhOS AI có thể mắc lỗi. Hãy kiểm tra thông tin quan trọng.
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <input id="fileInput" type="file" hidden multiple />
+
+  <script src="script.js"></script>
+</body>
+</html>
