@@ -10,16 +10,11 @@
   --sidebar-hover: #292929;
   --input: #2f2f2f;
   --surface: #282828;
-  --surface-2: #303030;
   --border: rgba(255, 255, 255, 0.1);
-  --border-soft: rgba(255, 255, 255, 0.07);
-
   --text: #ececec;
   --muted: #9b9b9b;
-
-  --white: #ffffff;
-  --black: #111111;
-
+  --white: #fff;
+  --black: #111;
   --accent: #3b82f6;
 }
 
@@ -53,28 +48,27 @@ select {
 }
 
 button {
-  color: inherit;
+  border: 0;
   background: none;
-  border: none;
+  color: inherit;
   cursor: pointer;
 }
 
 
-/* =========================================================
+/* =========================
    APP
-========================================================= */
+========================= */
 
 .app {
+  display: flex;
   width: 100%;
   height: 100vh;
-
-  display: flex;
 }
 
 
-/* =========================================================
+/* =========================
    SIDEBAR
-========================================================= */
+========================= */
 
 .sidebar {
   width: 260px;
@@ -93,16 +87,12 @@ button {
   padding: 14px;
 }
 
-
-/* BRAND */
-
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
 
   padding: 8px;
-
   margin-bottom: 9px;
 
   font-size: 17px;
@@ -125,9 +115,6 @@ button {
   font-weight: 800;
 }
 
-
-/* MAIN MENU */
-
 .main-menu {
   display: flex;
   flex-direction: column;
@@ -147,37 +134,30 @@ button {
   border-radius: 8px;
 
   color: #dedede;
-
   text-align: left;
 
-  transition:
-    background 0.15s ease,
-    transform 0.1s ease;
+  transition: background 0.15s ease;
 }
 
 .menu-item:hover {
   background: var(--sidebar-hover);
 }
 
-.menu-item:active {
-  transform: scale(0.99);
-}
-
 .menu-icon {
   width: 22px;
+  flex-shrink: 0;
 
   display: flex;
   justify-content: center;
-
-  flex-shrink: 0;
 }
 
 
-/* RECENT */
+/* =========================
+   RECENT
+========================= */
 
 .recent-section {
   flex: 1;
-
   min-height: 0;
 
   padding: 7px 10px;
@@ -197,7 +177,6 @@ button {
 .chat-list {
   display: flex;
   flex-direction: column;
-
   gap: 2px;
 }
 
@@ -214,10 +193,7 @@ button {
   border-radius: 8px;
 
   color: #d7d7d7;
-
   text-align: left;
-
-  transition: background 0.15s ease;
 }
 
 .chat-item:hover {
@@ -230,35 +206,29 @@ button {
 
 .chat-icon {
   width: 20px;
-
-  text-align: center;
-
   flex-shrink: 0;
+  text-align: center;
 }
 
 .chat-name {
   white-space: nowrap;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
 }
 
 
-/* =========================================================
-   ACCOUNT AREA
-========================================================= */
+/* =========================
+   ACCOUNT
+========================= */
 
 .sidebar-bottom {
   position: relative;
-
   padding: 10px;
 }
 
-
-/* ACCOUNT BUTTON */
-
 .profile-button {
+  position: relative;
+
   width: 100%;
 
   display: flex;
@@ -272,14 +242,15 @@ button {
 
   text-align: left;
 
-  transition: background 0.15s ease;
+  z-index: 310;
 }
 
 .profile-button:hover {
   background: var(--sidebar-hover);
 }
 
-.profile-avatar {
+.profile-avatar,
+.account-avatar {
   width: 34px;
   height: 34px;
 
@@ -312,25 +283,22 @@ button {
 
 .profile-info span {
   color: var(--muted);
-
   font-size: 12px;
 }
 
 .profile-arrow {
-  color: #a5a5a5;
-
+  color: #aaa;
   font-size: 21px;
 }
 
 
-/* ACCOUNT POPUP */
+/* ACCOUNT MENU */
 
 .account-menu {
   position: absolute;
 
   left: 7px;
   right: 7px;
-
   bottom: 64px;
 
   display: none;
@@ -354,9 +322,6 @@ button {
   display: block;
 }
 
-
-/* ACCOUNT HEADER */
-
 .account-header {
   width: 100%;
 
@@ -376,22 +341,6 @@ button {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.account-avatar {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #444;
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
 .account-header-text {
   flex: 1;
 
@@ -405,18 +354,13 @@ button {
 
 .account-header-text span {
   color: #999;
-
   font-size: 12px;
 }
 
 .account-arrow {
   color: #aaa;
-
   font-size: 20px;
 }
-
-
-/* ACCOUNT ITEMS */
 
 .account-item {
   width: 100%;
@@ -441,36 +385,30 @@ button {
 
 .account-item > span:first-child {
   width: 20px;
-
   text-align: center;
 }
 
 .item-arrow {
   margin-left: auto;
-
   color: #999;
-
   font-size: 20px;
 }
 
 .account-divider {
   height: 1px;
-
   margin: 8px 5px;
-
   background: rgba(255, 255, 255, 0.09);
 }
 
 
-/* =========================================================
+/* =========================
    MAIN
-========================================================= */
+========================= */
 
 .main {
   position: relative;
 
   flex: 1;
-
   min-width: 0;
 
   height: 100vh;
@@ -485,9 +423,9 @@ button {
 /* TOPBAR */
 
 .topbar {
-  height: 58px;
-
   position: relative;
+
+  height: 58px;
 
   display: flex;
   align-items: center;
@@ -506,7 +444,6 @@ button {
 
   display: flex;
   align-items: center;
-
   gap: 8px;
 
   font-weight: 600;
@@ -545,30 +482,24 @@ button {
 }
 
 
-/* =========================================================
+/* =========================
    CHAT
-========================================================= */
+========================= */
 
 .chat-area {
   flex: 1;
-
   min-height: 0;
 
   overflow-y: auto;
 }
 
-
-/* WELCOME */
-
 .welcome {
   min-height: 100%;
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 30px 20px 150px;
@@ -597,7 +528,6 @@ button {
 
 .welcome h1 {
   margin-bottom: 8px;
-
   font-size: 30px;
 }
 
@@ -605,14 +535,10 @@ button {
   color: var(--muted);
 }
 
-
-/* SUGGESTIONS */
-
 .suggestions {
   width: min(700px, 100%);
 
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
 
   gap: 10px;
@@ -623,32 +549,19 @@ button {
 .suggestion {
   display: flex;
   align-items: center;
-
   gap: 10px;
 
   padding: 15px;
 
   border: 1px solid var(--border);
-
   border-radius: 12px;
 
   text-align: left;
-
-  transition:
-    background 0.15s ease,
-    transform 0.1s ease;
 }
 
 .suggestion:hover {
   background: var(--input);
 }
-
-.suggestion:active {
-  transform: scale(0.99);
-}
-
-
-/* MESSAGES */
 
 .messages {
   width: min(820px, 100%);
@@ -660,9 +573,7 @@ button {
 
 .message {
   display: flex;
-
   gap: 13px;
-
   margin-bottom: 27px;
 }
 
@@ -697,14 +608,13 @@ button {
   line-height: 1.65;
 
   white-space: pre-wrap;
-
   overflow-wrap: anywhere;
 }
 
 
-/* =========================================================
+/* =========================
    COMPOSER
-========================================================= */
+========================= */
 
 .composer-wrapper {
   position: absolute;
@@ -723,9 +633,7 @@ button {
   min-height: 58px;
 
   display: flex;
-
   align-items: flex-end;
-
   gap: 8px;
 
   padding: 8px;
@@ -757,7 +665,6 @@ button {
 
 .composer-button {
   color: #ccc;
-
   font-size: 22px;
 }
 
@@ -771,20 +678,11 @@ button {
 
   font-size: 21px;
   font-weight: 800;
-
-  transition:
-    opacity 0.15s ease,
-    transform 0.1s ease;
 }
 
 .send-button:disabled {
   opacity: 0.3;
-
   cursor: default;
-}
-
-.send-button:not(:disabled):hover {
-  transform: scale(1.04);
 }
 
 #messageInput {
@@ -793,18 +691,16 @@ button {
   width: 100%;
 
   min-height: 40px;
-
   max-height: 180px;
 
-  resize: none;
-
   padding: 9px 4px;
+
+  resize: none;
 
   outline: none;
   border: none;
 
   background: transparent;
-
   color: white;
 
   line-height: 1.45;
@@ -820,18 +716,16 @@ button {
   text-align: center;
 
   color: #777;
-
   font-size: 11px;
 }
 
 
-/* =========================================================
-   SETTINGS OVERLAY
-========================================================= */
+/* =========================
+   SETTINGS
+========================= */
 
 .settings-overlay {
   position: fixed;
-
   inset: 0;
 
   display: none;
@@ -852,9 +746,6 @@ button {
   display: flex;
 }
 
-
-/* SETTINGS MODAL */
-
 .settings-modal {
   width: min(900px, calc(100vw - 40px));
 
@@ -874,14 +765,8 @@ button {
     0 35px 90px rgba(0, 0, 0, 0.55);
 }
 
-
-/* =========================================================
-   SETTINGS SIDEBAR
-========================================================= */
-
 .settings-sidebar {
   width: 220px;
-
   flex: 0 0 220px;
 
   padding: 12px;
@@ -892,9 +777,6 @@ button {
 
   overflow-y: auto;
 }
-
-
-/* CLOSE */
 
 .settings-close {
   width: 36px;
@@ -917,13 +799,9 @@ button {
   background: #2a2a2a;
 }
 
-
-/* SEARCH */
-
 .settings-search {
   display: flex;
   align-items: center;
-
   gap: 7px;
 
   padding: 9px 10px;
@@ -952,14 +830,9 @@ button {
   color: #888;
 }
 
-
-/* NAV */
-
 .settings-nav {
   display: flex;
-
   flex-direction: column;
-
   gap: 2px;
 }
 
@@ -968,7 +841,6 @@ button {
 
   display: flex;
   align-items: center;
-
   gap: 10px;
 
   padding: 9px 10px;
@@ -997,14 +869,8 @@ button {
   justify-content: center;
 }
 
-
-/* =========================================================
-   SETTINGS CONTENT
-========================================================= */
-
 .settings-content {
   flex: 1;
-
   min-width: 0;
 
   padding: 25px 30px;
@@ -1014,12 +880,8 @@ button {
 
 .settings-title h2 {
   margin-bottom: 18px;
-
   font-size: 21px;
 }
-
-
-/* UPGRADE */
 
 .upgrade-card {
   display: flex;
@@ -1029,7 +891,6 @@ button {
   gap: 20px;
 
   padding: 19px;
-
   margin-bottom: 10px;
 
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1047,9 +908,7 @@ button {
   margin-top: 6px;
 
   color: #999;
-
   font-size: 12px;
-  line-height: 1.45;
 }
 
 .upgrade-card button {
@@ -1058,17 +917,9 @@ button {
   border-radius: 20px;
 
   background: white;
-
   color: #111;
 
   font-weight: 600;
-}
-
-
-/* SETTINGS PAGE */
-
-.settings-page {
-  display: block;
 }
 
 .setting-row {
@@ -1101,7 +952,6 @@ button {
   color: #929292;
 
   font-size: 12px;
-
   line-height: 1.45;
 }
 
@@ -1121,9 +971,6 @@ button {
   color: white;
 }
 
-
-/* EMPTY */
-
 .empty-setting-page {
   display: none;
 
@@ -1139,7 +986,6 @@ button {
 
 .empty-icon {
   margin-bottom: 14px;
-
   font-size: 35px;
 }
 
@@ -1149,14 +995,11 @@ button {
 
 .empty-setting-page p {
   color: #888;
-
   font-size: 13px;
 }
 
 
-/* =========================================================
-   SWITCH
-========================================================= */
+/* SWITCH */
 
 .switch {
   position: relative;
@@ -1173,7 +1016,6 @@ button {
 
 .switch span {
   position: absolute;
-
   inset: 0;
 
   background: #555;
@@ -1181,8 +1023,6 @@ button {
   border-radius: 20px;
 
   cursor: pointer;
-
-  transition: 0.2s;
 }
 
 .switch span::after {
@@ -1212,9 +1052,9 @@ button {
 }
 
 
-/* =========================================================
-   SCROLLBARS
-========================================================= */
+/* =========================
+   SCROLLBAR
+========================= */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -1227,18 +1067,13 @@ button {
 
 ::-webkit-scrollbar-thumb {
   background: #454545;
-
   border-radius: 20px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
-
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media (max-width: 800px) {
 
@@ -1270,7 +1105,6 @@ button {
 
   .settings-modal {
     width: calc(100vw - 20px);
-
     height: calc(100vh - 20px);
 
     border-radius: 14px;
@@ -1278,25 +1112,20 @@ button {
 
   .settings-sidebar {
     width: 190px;
-
     flex: 0 0 190px;
   }
 }
 
-
 @media (min-width: 801px) {
-
   .mobile-menu {
     display: none;
   }
 }
 
-
 @media (max-width: 560px) {
 
   .settings-modal {
     display: block;
-
     overflow-y: auto;
   }
 
@@ -1314,16 +1143,10 @@ button {
 
   .setting-row {
     flex-direction: column;
-
     align-items: flex-start;
   }
 
   .setting-row select {
     width: 100%;
-  }
-
-  .account-menu {
-    left: 5px;
-    right: 5px;
   }
 }
