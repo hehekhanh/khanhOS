@@ -1,130 +1,376 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>khanhOS</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <div class="app">
 
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
+
+      <div class="sidebar-top">
+
         <div class="brand">
           <div class="brand-icon">K</div>
           <span>khanhOS</span>
         </div>
+
+        <nav class="main-menu">
+
+          <button class="menu-item" id="newChatBtn">
+            <span class="menu-icon">✏️</span>
+            <span>Chat mới</span>
+          </button>
+
+          <button class="menu-item">
+            <span class="menu-icon">🖼️</span>
+            <span>Ảnh</span>
+          </button>
+
+          <button class="menu-item">
+            <span class="menu-icon">📚</span>
+            <span>Thư viện</span>
+          </button>
+
+          <button class="menu-item">
+            <span class="menu-icon">🔌</span>
+            <span>Plugin</span>
+          </button>
+
+          <button class="menu-item">
+            <span class="menu-icon">📁</span>
+            <span>Dự án</span>
+          </button>
+
+        </nav>
+
       </div>
 
-      <nav class="menu">
-        <button class="menu-item new-chat" id="newChatBtn">
-          <span>✏️</span>
-          <span>Chat mới</span>
-        </button>
 
-        <button class="menu-item">
-          <span>🖼️</span>
-          <span>Ảnh</span>
-        </button>
+      <!-- =========================
+           RECENT CHATS
+      ========================== -->
 
-        <button class="menu-item">
-          <span>📚</span>
-          <span>Thư viện</span>
-        </button>
+      <div class="recent-section">
 
-        <button class="menu-item">
-          <span>🔌</span>
-          <span>Plugin</span>
-        </button>
+        <div class="recent-title">
+          Gần đây
+        </div>
 
-        <button class="menu-item">
-          <span>📁</span>
-          <span>Dự án</span>
-        </button>
-      </nav>
+        <div class="chat-list" id="chatList">
 
-      <div class="recent-title">Gần đây</div>
+          <button class="chat-item active">
 
-      <div class="chat-list" id="chatList">
-        <button class="chat-item active">
-          <span>💬</span>
-          <span>Cuộc chat mới</span>
-        </button>
+            <span class="chat-icon">💬</span>
+
+            <span class="chat-name">
+              Cuộc chat mới
+            </span>
+
+          </button>
+
+        </div>
+
       </div>
+
+
+      <!-- =========================
+           ACCOUNT
+      ========================== -->
 
       <div class="sidebar-bottom">
-        <div class="profile">
-          <div class="avatar">K</div>
-          <div class="profile-text">
-            <strong>khanh</strong>
-            <span>khanhOS</span>
-          </div>
-          <button class="profile-more">•••</button>
+
+        <!-- ACCOUNT POPUP -->
+
+        <div
+          class="account-menu"
+          id="accountMenu"
+        >
+
+          <button class="account-header">
+
+            <div class="account-avatar">
+              K
+            </div>
+
+            <div class="account-header-text">
+
+              <strong>khanh</strong>
+
+              <span>Free</span>
+
+            </div>
+
+            <span class="account-arrow">
+              ›
+            </span>
+
+          </button>
+
+
+          <div class="account-divider"></div>
+
+
+          <button class="account-item">
+            <span>✨</span>
+            <span>Dùng thử Plus miễn phí</span>
+          </button>
+
+
+          <button class="account-item">
+            <span>◉</span>
+            <span>Cá nhân hóa</span>
+          </button>
+
+
+          <button class="account-item">
+            <span>◎</span>
+            <span>Hồ sơ</span>
+          </button>
+
+
+          <button
+            class="account-item"
+            id="settingsBtn"
+          >
+
+            <span>⚙️</span>
+            <span>Cài đặt</span>
+
+          </button>
+
+
+          <div class="account-divider"></div>
+
+
+          <button class="account-item">
+
+            <span>◉</span>
+            <span>Trợ giúp</span>
+
+            <span class="item-arrow">
+              ›
+            </span>
+
+          </button>
+
+
+          <button class="account-item">
+
+            <span>⇥</span>
+            <span>Đăng xuất</span>
+
+            <span class="item-arrow">
+              ›
+            </span>
+
+          </button>
+
         </div>
+
+
+        <!-- ACCOUNT BUTTON -->
+
+        <button
+          class="profile-button"
+          id="profileButton"
+        >
+
+          <div class="profile-avatar">
+            K
+          </div>
+
+          <div class="profile-info">
+
+            <strong>khanh</strong>
+
+            <span>Free</span>
+
+          </div>
+
+          <span class="profile-arrow">
+            ›
+          </span>
+
+        </button>
+
       </div>
+
     </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main class="main">
 
-      <header class="topbar">
-        <button class="mobile-menu" id="mobileMenu">☰</button>
+      <!-- TOP BAR -->
 
-        <div class="top-title">
-          <span>KhanhOS AI</span>
-          <span class="online-dot"></span>
+      <header class="topbar">
+
+        <div class="topbar-left">
+
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+          >
+            ☰
+          </button>
+
         </div>
 
-        <button class="top-more">•••</button>
+
+        <div class="model-title">
+
+          <span>KhanhOS AI</span>
+
+          <span class="online-dot"></span>
+
+        </div>
+
+
+        <button class="top-more">
+          •••
+        </button>
+
       </header>
 
-      <section class="chat-area" id="chatArea">
 
-        <div class="welcome" id="welcome">
-          <div class="welcome-icon">K</div>
+      <!-- =========================
+           CHAT AREA
+      ========================== -->
 
-          <h1>Xin chào 👋</h1>
+      <section
+        class="chat-area"
+        id="chatArea"
+      >
 
-          <p>KhanhOS AI sẵn sàng hỗ trợ bạn.</p>
+        <!-- WELCOME -->
+
+        <div
+          class="welcome"
+          id="welcome"
+        >
+
+          <div class="welcome-logo">
+            K
+          </div>
+
+          <h1>
+            Xin chào 👋
+          </h1>
+
+          <p>
+            KhanhOS AI sẵn sàng hỗ trợ bạn.
+          </p>
+
+
+          <!-- SUGGESTIONS -->
 
           <div class="suggestions">
-            <button class="suggestion" data-text="Giúp tôi viết code">
+
+            <button
+              class="suggestion"
+              data-text="Giúp tôi viết code"
+            >
+
               <span>💻</span>
-              <span>Viết code</span>
+
+              <span>
+                Viết code
+              </span>
+
             </button>
 
-            <button class="suggestion" data-text="Tìm cho tôi một game hay">
+
+            <button
+              class="suggestion"
+              data-text="Tìm cho tôi một game hay"
+            >
+
               <span>🎮</span>
-              <span>Tìm game</span>
+
+              <span>
+                Tìm game
+              </span>
+
             </button>
 
-            <button class="suggestion" data-text="Giúp tôi học bài">
+
+            <button
+              class="suggestion"
+              data-text="Giúp tôi học bài"
+            >
+
               <span>📚</span>
-              <span>Học tập</span>
+
+              <span>
+                Học tập
+              </span>
+
             </button>
 
-            <button class="suggestion" data-text="Giải thích cho tôi một vấn đề">
+
+            <button
+              class="suggestion"
+              data-text="Giải thích cho tôi một vấn đề"
+            >
+
               <span>💡</span>
-              <span>Giải thích</span>
+
+              <span>
+                Giải thích
+              </span>
+
             </button>
+
           </div>
+
         </div>
 
-        <div class="messages" id="messages"></div>
+
+        <!-- MESSAGES -->
+
+        <div
+          class="messages"
+          id="messages"
+        ></div>
 
       </section>
 
+
+      <!-- =========================
+           CHAT INPUT
+      ========================== -->
+
       <div class="composer-wrapper">
+
         <div class="composer">
+
+          <!-- ADD FILE -->
 
           <button
             class="composer-button"
             id="fileButton"
             title="Thêm file"
-            type="button"
           >
             +
           </button>
+
+
+          <!-- INPUT -->
 
           <textarea
             id="messageInput"
@@ -133,26 +379,489 @@
             autocomplete="off"
           ></textarea>
 
+
+          <!-- SEND -->
+
           <button
             class="send-button"
             id="sendButton"
-            type="button"
-            title="Gửi"
             disabled
+            title="Gửi"
           >
             ↑
           </button>
+
         </div>
+
 
         <div class="composer-note">
-          KhanhOS AI có thể mắc lỗi. Hãy kiểm tra thông tin quan trọng.
+
+          KhanhOS AI có thể mắc lỗi.
+          Hãy kiểm tra thông tin quan trọng.
+
         </div>
+
       </div>
+
     </main>
+
   </div>
 
-  <input id="fileInput" type="file" hidden multiple />
+
+  <!-- FILE INPUT -->
+
+  <input
+    type="file"
+    id="fileInput"
+    hidden
+    multiple
+  >
+
+
+  <!-- =========================
+       SETTINGS MODAL
+  ========================== -->
+
+  <div
+    class="settings-overlay"
+    id="settingsOverlay"
+  >
+
+    <div class="settings-modal">
+
+
+      <!-- SETTINGS SIDEBAR -->
+
+      <aside class="settings-sidebar">
+
+
+        <button
+          class="settings-close"
+          id="settingsClose"
+          title="Đóng"
+        >
+          ×
+        </button>
+
+
+        <!-- SEARCH -->
+
+        <div class="settings-search">
+
+          <span>🔎</span>
+
+          <input
+            type="text"
+            placeholder="Tìm kiếm cài đặt"
+          >
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="settings-nav">
+
+          <button
+            class="settings-nav-item active"
+            data-title="Chung"
+          >
+            <span>⚙️</span>
+            <span>Chung</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Thông báo"
+          >
+            <span>🔔</span>
+            <span>Thông báo</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Cá nhân hóa"
+          >
+            <span>🎨</span>
+            <span>Cá nhân hóa</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Plugin"
+          >
+            <span>🔌</span>
+            <span>Plugin</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Giọng nói"
+          >
+            <span>🔊</span>
+            <span>Giọng nói</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Thanh toán"
+          >
+            <span>💳</span>
+            <span>Thanh toán</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Kiểm soát dữ liệu"
+          >
+            <span>🗄️</span>
+            <span>Kiểm soát dữ liệu</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="An toàn"
+          >
+            <span>🛡️</span>
+            <span>An toàn</span>
+          </button>
+
+
+          <button
+            class="settings-nav-item"
+            data-title="Bảo mật"
+          >
+            <span>🔐</span>
+            <span>Bảo mật</span>
+          </button>
+
+        </nav>
+
+      </aside>
+
+
+      <!-- SETTINGS CONTENT -->
+
+      <section class="settings-content">
+
+        <!-- TOP -->
+
+        <div class="settings-title">
+
+          <h2 id="settingsPageTitle">
+            Chung
+          </h2>
+
+        </div>
+
+
+        <!-- UPGRADE CARD -->
+
+        <div class="upgrade-card">
+
+          <div>
+
+            <strong>
+              KhanhOS
+            </strong>
+
+            <p>
+              Khám phá thêm các tính năng của KhanhOS.
+            </p>
+
+          </div>
+
+          <button>
+            Khám phá
+          </button>
+
+        </div>
+
+
+        <!-- GENERAL SETTINGS -->
+
+        <div
+          class="settings-page"
+          id="generalSettings"
+        >
+
+
+          <!-- THEME -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Giao diện
+              </strong>
+
+              <p>
+                Chọn giao diện của KhanhOS.
+              </p>
+
+            </div>
+
+
+            <select id="themeSelect">
+
+              <option value="dark">
+                Tối
+              </option>
+
+              <option value="light">
+                Sáng
+              </option>
+
+              <option value="system">
+                Hệ thống
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- CONTRAST -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Độ tương phản
+              </strong>
+
+              <p>
+                Điều chỉnh độ tương phản.
+              </p>
+
+            </div>
+
+
+            <select>
+
+              <option>
+                Trung bình
+              </option>
+
+              <option>
+                Thấp
+              </option>
+
+              <option>
+                Cao
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- ACCENT -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Màu nhấn
+              </strong>
+
+              <p>
+                Chọn màu chủ đạo của hệ thống.
+              </p>
+
+            </div>
+
+
+            <select>
+
+              <option>
+                Xanh dương
+              </option>
+
+              <option>
+                Tím
+              </option>
+
+              <option>
+                Xanh lá
+              </option>
+
+              <option>
+                Đỏ
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- LANGUAGE -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Ngôn ngữ
+              </strong>
+
+              <p>
+                Ngôn ngữ hiển thị.
+              </p>
+
+            </div>
+
+
+            <select>
+
+              <option>
+                Tiếng Việt
+              </option>
+
+              <option>
+                English
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- SMART MODE -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Mức độ thông minh cao hơn
+              </strong>
+
+              <p>
+                Cho phép KhanhOS xử lý các yêu cầu phức tạp hơn.
+              </p>
+
+            </div>
+
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+
+          <!-- VOICE -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Nhập bằng giọng nói
+              </strong>
+
+              <p>
+                Cho phép sử dụng giọng nói trong trình soạn chat.
+              </p>
+
+            </div>
+
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+
+          <!-- ANIMATION -->
+
+          <div class="setting-row">
+
+            <div class="setting-text">
+
+              <strong>
+                Hiệu ứng giao diện
+              </strong>
+
+              <p>
+                Hiển thị hiệu ứng chuyển động trong KhanhOS.
+              </p>
+
+            </div>
+
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- OTHER SETTINGS -->
+
+        <div
+          class="empty-setting-page"
+          id="otherSettings"
+        >
+
+          <div class="empty-icon">
+            ⚙️
+          </div>
+
+          <h3 id="otherSettingsTitle">
+            Tính năng
+          </h3>
+
+          <p>
+            Khu vực cài đặt này sẽ được phát triển thêm.
+          </p>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
 
   <script src="script.js"></script>
+
 </body>
 </html>
